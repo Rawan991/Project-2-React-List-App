@@ -1,13 +1,37 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Lobster Two', ;
+
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+header {
+  height:350px ;
+  background-image: url('./tdih-april23-HD.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+ font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serift;
+  text-align: left;
+color: white;
+  font-size: 60px;
+
+}
+
+ul{
+  text-align: left;
+}
+nav{
+  text-align: center;
+
+}
+
+h1{
+  text-align: center;
+}
+
+.wil{
+  
+  width:150px;
+  align-items: center;
+  
+  
 }
