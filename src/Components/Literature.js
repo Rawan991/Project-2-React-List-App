@@ -7,15 +7,22 @@ import Favorites from './Favorites'
 
 export default class Literature extends React.Component {
 
+//  handleFaveClick = (e) => {
+//         console.log("handling Fave click!");
+//         e.stopPropagation()
 
+//  }
     render() {
+        
         let literatureBooks = this.props.literatureBook.map((titles, key) => {
 
             return (
                 <div>
                     <li><Link to={`/LinesOfAuthor/${key.author}`}>{titles.title} </Link></li>
-                    <button onClick={()=>this.props.handleFaveToggle(titles.title)}> <Favorites  
-                     isFave={"Fave"} /> </button>
+                    <button onClick={()=>{
+                       this.props.handleFaveToggle(titles.title);
+                    //    this.props.addToFav(titles.title);
+                    }}>Fave</button>
                     
                 </div>
                     )
@@ -38,7 +45,7 @@ export default class Literature extends React.Component {
                         <input className="inputofSearch" type="text" />
 
                         <button >  <Link to="/AddNewLiterature"> Add New </Link> </button>
-                        <button ><Link to="/Favorites"> Favorites </Link> </button>
+                        
 
 
                         <ul>{literatureBooks}</ul>

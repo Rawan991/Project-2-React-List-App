@@ -8,7 +8,7 @@ import LinesOfAuthor from './Components/LinesOfAuthor'
 import Literature from './Components/Literature'
 import About from './Components/About'
 import Favorites from './Components/Favorites'
-import ListRead from './Components/ListRead'
+
 
 
 
@@ -18,51 +18,61 @@ export default class App extends React.Component {
     this.state = {
       author: [],
       faves: [],
+      checkes: false
+
 
     }
   }
-  handleFaveToggle
+  // add title to fave page 
   handleFaveToggle = (title) => {
+
     let faves = this.state.faves.slice()
     let titleIndex = faves.indexOf(title)
 
-    if (titleIndex !== -1) {
-      faves.splice(titleIndex, 1);
-
-      console.log(`Removing From Favors`)
-    }
-    else {
-
-      faves.push(title);
-
+    if (titleIndex === -1) {
+      this.setState({
+        faves: [...this.state.faves, title]
+      })
       console.log(`Adding To Favors`)
     }
 
+  }
+  // to add new title and object 
+  addNewItem = (newTitleTerm, newObjectTerm) => {
     this.setState({
-      faves
+      author: [...this.state.author, { title: newTitleTerm, lines: newObjectTerm }],
+
+    });
+  }
+  //to Clear all fave
+  clickToRemoveAll = () => {
+    console.log('remove')
+
+    this.setState({
+      faves: []
     })
-
   }
+  //to Remove select item 
+  clickToRemoveOne = (e, Removeone) => {
 
-  addToFav = () => {
+    // console.log(e.target.checked)
+
+    // let  faves = this.state.faves.slice()
+    // let titleIndex = faves.indexOf(Removeone)
+
+    // if (titleIndex !== -1) {
+    //   faves.splice(titleIndex, 1);
+
     this.setState({
-      faves: [... this.state.faves], 
-    });
-  }
-
-
-  addNewItem = (newTitleTerm) => {
-
-
-    this.setState({
-      // author: [...this.state.author, { author: "William Shakespeare", title: newTitleTerm }],
-      author: [...this.state.author, { title: newTitleTerm }],
-
-    });
+      faves: this.state.faves.filter((vlau) => {
+        return vlau !== Removeone
+      })
+    })
   }
 
 
 
+  // use  axios to get title and liens 
   componentDidMount() {
 
     axios({
@@ -107,7 +117,7 @@ export default class App extends React.Component {
               {'  ||  '}
               <Link to="/About">About</Link>
               {'  ||  '}
-              <Link to="/ Favorites"> Favorites</Link>
+              <Link to="/Favorites"> Favorites</Link>
             </nav>
             <Route exact path="/App" component={App} />
 
@@ -117,12 +127,15 @@ export default class App extends React.Component {
             />} />
 
             <Route path="/Literature" component={() => < Literature literatureBook={this.state.author}
-              handleFaveToggle={this.handleFaveToggle}
+              handleFaveToggle={this.handleFaveToggle} addToFav={this.addToFav} clickToRemoveAll={this.clickToRemoveAll}
             />} />
 
             <Route path="/LinesOfAuthor" component={() => <LinesOfAuthor literaturelines={this.state.author}
             />} />
-            <Router path="/Favorites" component={() => <Favorites faves={this.state.faves} handleFaveToggle={this.handleFaveToggle} />} />
+            <Route path="/Favorites" component={() => <Favorites faves={this.state.faves} handleFaveToggle={this.handleFaveToggle}
+              clickToRemoveAll={this.clickToRemoveAll} clickToRemoveOne={this.clickToRemoveOne}
+              checkes={this.state.checkes} />}
+            />
 
             <Route path="/About" component={About} />
           </div>

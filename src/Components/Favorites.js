@@ -1,29 +1,42 @@
 import React from 'react'
-import { render } from '@testing-library/react'
-import ListRead from './ListRead'
+
+
 
 export default class Favorites extends React.Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            includes: []
-        }
-    }
-    clickToAddFaves(handel) {
-        console.log()
-        this.props.handleFaveToggle()
 
-    }
+
     render() {
+        return (
+            <div>
+                <form>
+                    {
+                        this.props.faves.map((oneBookTitle, i) => {
+                            return (
+                                <div>
+                                    <input
+                                        type="checkbox"
+                                        checked={this.props.checkes}
+                                        name="oneBookTitle"
+                                    />
+
+                                    {oneBookTitle}
+
+                                </div>
+                            )
+                        })
+                    }
+                    < input
+                        type="submit"
+                        value="delete"
+                        onChange={(e) => this.props.clickToRemoveOne(e, oneBookTitle)} />
 
 
-        return <div>
-            {this.props.isFave}
-            <h1>vhvh</h1>
-        </div>
+                </form>
+                <button onClick={() => this.props.clickToRemoveAll()}> Clear </button>
 
-
-
-
+                <br>
+                </br>
+            </div >
+        )
     }
 }
