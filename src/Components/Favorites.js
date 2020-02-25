@@ -1,25 +1,29 @@
 import React from 'react'
+import { render } from '@testing-library/react'
+import ListRead from './ListRead'
 
 export default class Favorites extends React.Component {
-    // constructor(props) {
-    //     super(props)
-    //     this.state = {
-
-    //     }
-    // }
-
-    handleFaveClick = () => {
-        console.log("handling Fave click!", this.props.isFave);
-        this.props.onFaveToggle()
+    constructor(props) {
+        super(props)
+        this.state = {
+            includes: []
+        }
+    }
+    clickToAddFaves(handel) {
+        console.log()
+        this.props.handleFaveToggle()
 
     }
     render() {
-        const isFave = (this.props.isFave) ? 'remove_from_queue' : 'add_to_queue'
-        return (
-            <div
-                className={`film-row-fave ${isFave}`} >
-                <button onClick={handleFaveClick}>{isFave}</button>
-            </div >
-        )
+
+
+        return <div>
+            {this.props.isFave}
+            <h1>vhvh</h1>
+        </div>
+
+
+
+
     }
 }

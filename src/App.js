@@ -8,6 +8,7 @@ import LinesOfAuthor from './Components/LinesOfAuthor'
 import Literature from './Components/Literature'
 import About from './Components/About'
 import Favorites from './Components/Favorites'
+import ListRead from './Components/ListRead'
 
 
 
@@ -20,6 +21,7 @@ export default class App extends React.Component {
 
     }
   }
+  handleFaveToggle
   handleFaveToggle = (title) => {
     let faves = this.state.faves.slice()
     let titleIndex = faves.indexOf(title)
@@ -40,6 +42,12 @@ export default class App extends React.Component {
       faves
     })
 
+  }
+
+  addToFav = () => {
+    this.setState({
+      faves: [... this.state.faves], 
+    });
   }
 
 
@@ -109,12 +117,12 @@ export default class App extends React.Component {
             />} />
 
             <Route path="/Literature" component={() => < Literature literatureBook={this.state.author}
-
+              handleFaveToggle={this.handleFaveToggle}
             />} />
 
             <Route path="/LinesOfAuthor" component={() => <LinesOfAuthor literaturelines={this.state.author}
             />} />
-            <Router path="/Favorites" component={() => <Favorites onFaveToggle={this.handleFaveToggle} />} />
+            <Router path="/Favorites" component={() => <Favorites faves={this.state.faves} handleFaveToggle={this.handleFaveToggle} />} />
 
             <Route path="/About" component={About} />
           </div>

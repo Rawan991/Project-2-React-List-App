@@ -2,16 +2,11 @@ import React from 'react'
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import AddNewLiterature from './AddNewLiteraure';
 import LinesOfAuthor from './LinesOfAuthor'
-import Favorites from './Components/faves'
+import Favorites from './Favorites'
 
 
 export default class Literature extends React.Component {
 
-    // UsersPage = () => {
-    //     return (
-    //         <h3>Users Page</h3>
-    //     );
-    // }
 
     render() {
         let literatureBooks = this.props.literatureBook.map((titles, key) => {
@@ -19,9 +14,9 @@ export default class Literature extends React.Component {
             return (
                 <div>
                     <li><Link to={`/LinesOfAuthor/${key.author}`}>{titles.title} </Link></li>
-                    <Favorites  
-                    isFave={this.props.faves.includes(titles)}
-                    onFaveToggle={this.props.onFaveToggle}/>
+                    <button onClick={()=>this.props.handleFaveToggle(titles.title)}> <Favorites  
+                     isFave={"Fave"} /> </button>
+                    
                 </div>
                     )
                 })
