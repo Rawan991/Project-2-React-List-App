@@ -1,4 +1,7 @@
 import React from "react";
+import Button from "@material-ui/core/Button";
+import IconButton from "@material-ui/core/IconButton";
+import DeleteIcon from "@material-ui/core/IconButton";
 
 export default class Favorites extends React.Component {
   constructor(props) {
@@ -8,22 +11,10 @@ export default class Favorites extends React.Component {
       checked: false
     };
   }
-  // //to Remove select item
-  // clickRemoveOne = e => {
-  //   console.log(e.target.checked);
-  //   //   //this.state.checkes
-  //   console.log(e);
-  //   const faves = this.props.faves.slice();
-  //   const titleIndex = faves.indexOf(e);
-  //   console.log(faves);
-  //   console.log(titleIndex);
-  //   if (titleIndex !== -1) {
-  //     faves.splice(titleIndex, 1);
-  //   }
-  //   this.setState({
-  //     deleteSelect: faves
-  //   });
-  // };
+  clickRemoveOne = e => {
+    console.log("Hi");
+    this.props.deletedbook();
+  };
 
   render() {
     return (
@@ -37,15 +28,19 @@ export default class Favorites extends React.Component {
                 value={this.props.checkes}
                 // onChange={this.props.clickToRemoveOne}
               />
-              <button onClick={() => this.props.deletedbook()}>
+              <button onClick={() => this.clickRemoveOne()}>
                 Select to delete{" "}
               </button>
               {oneBookTitle}
             </div>
           );
         })}
-
-        <button onClick={() => this.props.clickToRemoveAll()}> Clear </button>
+        <IconButton aria-label="delete">
+          <DeleteIcon onClick={() => this.props.clickToRemoveAll()}>
+            {" "}
+            Clear{" "}
+          </DeleteIcon>
+        </IconButton>
 
         <br></br>
       </div>

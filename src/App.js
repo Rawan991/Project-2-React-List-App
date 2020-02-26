@@ -19,19 +19,19 @@ export default class App extends React.Component {
       checkes: false
     };
   }
-  toRemoveItem = newItemArra => {
-    let temp = this.state.faves.slice();
-    const itemID = temp.find(newItemArra);
-    //   const titleIndex = faves.indexOf(e)
-    console.log(temp);
-    console.log(itemID);
+  // toRemoveItem = newItemArra => {
+  //   let temp = this.state.faves.slice();
+  //   const itemID = temp.find(newItemArra);
+  //   //   const titleIndex = faves.indexOf(e)
+  //   console.log(temp);
+  //   console.log(itemID);
 
-    temp.splice(itemID, 1);
+  //   temp.splice(itemID, 1);
 
-    this.setState({
-      faves: temp
-    });
-  };
+  //   this.setState({
+  //     faves: temp
+  //   });
+  // };
 
   toFiltervalue = newFilterArra => {
     this.setState({
@@ -93,13 +93,15 @@ export default class App extends React.Component {
 
   deletedbook = book => {
     const faves = [...this.state.faves];
-    const titleIndex = faves.indexOf(book);
+    const titleIndex = faves[book];
+    console.log(faves);
+    console.log(titleIndex);
     if (titleIndex !== -1) {
       faves.splice(titleIndex, 1);
     } else {
       console.log("not work");
     }
-    this.setState({ faves });
+    this.setState({ faves: faves });
   };
 
   // use  axios to get title and liens

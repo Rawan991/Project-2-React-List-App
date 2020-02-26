@@ -21,8 +21,8 @@ export default class Literature extends React.Component {
   };
 
   handleSearch = e => {
-    const filteredLiteratureBook = this.props.literatureBook.filter(mama => {
-      return mama.title
+    const filteredLiteratureBook = this.props.literatureBook.filter(title => {
+      return title.title
         .toLowerCase()
         .includes(this.state.searchOfTitle.toLowerCase());
     });
