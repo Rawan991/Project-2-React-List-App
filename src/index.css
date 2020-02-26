@@ -5,13 +5,13 @@ body {
 }
 
 header {
-  height:350px ;
+  height:150px ;
   background-image: url('./tdih-april23-HD.jpg');
   background-repeat: no-repeat;
   background-attachment: fixed;
  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serift;
   text-align: left;
-color: white;
+color:orangered;
   font-size: 60px;
 
 }
@@ -21,7 +21,6 @@ ul{
 }
 nav{
   text-align: center;
-
 }
 
 h1{
@@ -31,7 +30,16 @@ h1{
 .wil{
   
   width:150px;
-  align-items: center;
+  display: inline;
+
   
   
+}
+.AddNew{
+  text-align:center;
+}
+
+.Aboutit{
+font-size: 17px;
+text-align: justify;
 }

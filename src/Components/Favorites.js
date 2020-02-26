@@ -1,42 +1,30 @@
-import React from 'react'
-
-
+import React from "react";
 
 export default class Favorites extends React.Component {
+  render() {
+    return (
+      <div>
+        <form>
+          {this.props.faves.map((oneBookTitle, i) => {
+            return (
+              <div>
+                <input type="checkbox" name="oneBookTitle" />
 
+                {oneBookTitle}
+              </div>
+            );
+          })}
+          <input
+            type="button"
+            value="delete"
+            onClick={this.props.clickToRemoveOne}
+          />
+        </form>
 
-    render() {
-        return (
-            <div>
-                <form>
-                    {
-                        this.props.faves.map((oneBookTitle, i) => {
-                            return (
-                                <div>
-                                    <input
-                                        type="checkbox"
-                                        checked={this.props.checkes}
-                                        name="oneBookTitle"
-                                    />
+        <button onClick={() => this.props.clickToRemoveAll()}> Clear </button>
 
-                                    {oneBookTitle}
-
-                                </div>
-                            )
-                        })
-                    }
-                    < input
-                        type="submit"
-                        value="delete"
-                        onChange={(e) => this.props.clickToRemoveOne(e, oneBookTitle)} />
-
-
-                </form>
-                <button onClick={() => this.props.clickToRemoveAll()}> Clear </button>
-
-                <br>
-                </br>
-            </div >
-        )
-    }
+        <br></br>
+      </div>
+    );
+  }
 }
