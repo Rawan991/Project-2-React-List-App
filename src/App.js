@@ -8,6 +8,7 @@ import LinesOfAuthor from "./Components/LinesOfAuthor";
 import Literature from "./Components/Literature";
 import About from "./Components/About";
 import Favorites from "./Components/Favorites";
+import HomePage from "./Components/Home";
 
 export default class App extends React.Component {
   constructor(props) {
@@ -18,6 +19,20 @@ export default class App extends React.Component {
       checkes: false
     };
   }
+  toRemoveItem = newItemArra => {
+    let temp = this.state.faves.slice();
+    const itemID = temp.find(newItemArra);
+    //   const titleIndex = faves.indexOf(e)
+    console.log(temp);
+    console.log(itemID);
+
+    temp.splice(itemID, 1);
+
+    this.setState({
+      faves: temp
+    });
+  };
+
   toFiltervalue = newFilterArra => {
     this.setState({
       author: newFilterArra
@@ -52,22 +67,39 @@ export default class App extends React.Component {
       faves: []
     });
   };
+
   //to Remove select item
-  clickToRemoveOne = (e, Removeone) => {
-    console.log(e.target.checked);
 
-    let faves = this.state.faves.slice();
-    let titleIndex = faves.indexOf(Removeone);
+  // to Remove select item
 
+  // clickToRemoveOne = (e, Removeone) => {
+  //   console.log(e.target.checkes);
+  //   //this.state.checkes
+  //   console.log(e);
+  //   const faves = this.state.faves.slice();
+  //   const titleIndex = faves.indexOf(Removeone);
+
+  //   console.log(faves);
+  //   console.log(titleIndex);
+  //   if (titleIndex !== -1) {
+  //     faves.splice(titleIndex, 1);
+
+  //   this.setState({
+  //     faves: this.state.faves.filter(vlau => {
+  //       return vlau !== Removeone;
+  //     })
+  //   });
+  // };}
+
+  deletedbook = book => {
+    const faves = [...this.state.faves];
+    const titleIndex = faves.indexOf(book);
     if (titleIndex !== -1) {
       faves.splice(titleIndex, 1);
-
-      this.setState({
-        faves: this.state.faves.filter(vlau => {
-          return vlau !== Removeone;
-        })
-      });
+    } else {
+      console.log("not work");
     }
+    this.setState({ faves });
   };
 
   // use  axios to get title and liens
@@ -100,7 +132,7 @@ export default class App extends React.Component {
         <Router>
           <div>
             <nav className="navbar navbar-dark bg-dark">
-              <Link to="/">Home</Link>
+              <Link to="/Home">Home</Link>
               <Link to="/Literature">Literature</Link>
 
               {/* <Link to='/LinesOfAuthor'>LinesOfAuthor</Link> */}
@@ -109,7 +141,7 @@ export default class App extends React.Component {
 
               <Link to="/Favorites"> My Favorites</Link>
             </nav>
-            <Route exact path="/App" component={App} />
+            <Route exact path="/Home" component={HomePage} />
 
             <Route
               path="/AddNewLiterature"
@@ -146,6 +178,8 @@ export default class App extends React.Component {
                   clickToRemoveAll={this.clickToRemoveAll}
                   clickToRemoveOne={this.clickToRemoveOne}
                   checkes={this.state.checkes}
+                  toRemoveItem={this.toRemoveItem}
+                  deletedbook={this.deletedbook}
                 />
               )}
             />

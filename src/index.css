@@ -1,45 +1,64 @@
 body {
   margin: 0;
-  font-family: 'Lobster Two', ;
-
+  font-family: "Lobster Two";
 }
 
 header {
-  height:150px ;
-  background-image: url('./tdih-april23-HD.jpg');
+  height: 290px;
+  background-image: url("./tdih-april23-HD.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
- font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serift;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serift;
   text-align: left;
-color:orangered;
+  color: orangered;
   font-size: 60px;
-
 }
 
-ul{
+ul {
   text-align: left;
 }
-nav{
+nav {
   text-align: center;
 }
 
-h1{
+h1 {
   text-align: center;
 }
 
-.wil{
-  
-  width:150px;
+.wil {
+  width: 150px;
   display: inline;
-
-  
-  
 }
-.AddNew{
-  text-align:center;
+.AddNew {
+  text-align: center;
 }
 
-.Aboutit{
-font-size: 17px;
-text-align: justify;
+.Aboutit {
+  font-size: 17px;
+  text-align: justify;
+}
+
+/* .forStyle {
+  width: 250px;
+  height: 300px;
+  display: inline-block;
+  justify-content: center;
+  justify-content: space-between;
+  background-color: white;
+  border: 1px solid black;
+  position: relative;
+  /* align-items: center; */
+  /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 5px;
+  margin: 20px;
+  padding: 0px;
+  clear: both; */ */
+  /* display: table; */
+  /* display: block;
+  margin-left: auto;
+  margin-right: auto; */
+
+
+#forStyles {
+  align-items: center;
 }
