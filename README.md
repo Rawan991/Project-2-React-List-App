@@ -13,6 +13,7 @@ The literature of wiliam Shakespeare. The website have wilam’s literature and 
 6 - As a user , I can delete all the title from that page
 
 7 - As a user , I can add a title and a subject in literature page when he click on (add new) button’s
+8- As a user , I can remove one title from Read it page 
 ```
 ![wireframe](1.png)
 ![wireframe](2.png)
