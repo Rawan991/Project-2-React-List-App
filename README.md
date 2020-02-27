@@ -14,6 +14,11 @@ The literature of wiliam Shakespeare. The website have wilam’s literature and 
 
 7 - As a user , I can add a title and a subject in literature page when he click on (add new) button’s
 ```
+![wireframe](1.png)
+![wireframe](2.png)
+![wireframe](3.png)
+![wireframe](4.png)
+
 
 ### unsolved problems
 
