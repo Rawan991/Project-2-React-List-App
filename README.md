@@ -26,7 +26,7 @@ The literature of wiliam Shakespeare. The website have wilam’s literature and 
 ```
 Edit an item from a list.
 Remove an item from a list.
-Clear/delete all items.
+
 
 ```
 
