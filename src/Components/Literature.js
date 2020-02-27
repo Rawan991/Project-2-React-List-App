@@ -34,9 +34,9 @@ export default class Literature extends React.Component {
     let literatureBooks = this.props.literatureBook.map((titles, i) => {
       return (
         <div>
-          <p className="titleofLits">
+          <li className="titleofLits">
             <Link to={`/LinesOfAuthor/${titles.author}`}>{titles.title} </Link>
-          </p>
+          </li>
           <button
             onClick={() => {
               this.props.handleFaveToggle(titles.title);
@@ -45,6 +45,7 @@ export default class Literature extends React.Component {
           >
             Read it
           </button>
+       
         </div>
       );
     });
@@ -65,10 +66,9 @@ export default class Literature extends React.Component {
           language, and delve into the very best writers and works in the
           English language.
         </p>
-     
+
         {/* Search title  */}
         <input
-        
           className="titleSeacrh"
           placeholder={"Search for title"}
           type="text"

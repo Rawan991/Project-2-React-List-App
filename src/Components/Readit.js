@@ -21,37 +21,34 @@ export default class Readit extends React.Component {
   };
 
   render() {
-    return (
-      <div>
-        <form>
-          {this.props.faves.map((oneBookTitle, i) => {
-            return (
-              <div className="titleofLit">
-                {/* <input
+    const favorirestitle = this.props.faves.map((oneBookTitle, i) => {
+      return (
+        <div className="titleofLit">
+          {/* <input
                   type="button"
                   name="oneBookTitle"
                   value={this.props.checkes}
                   onChange={e => this.props.handlechangeToggle(e)}
                 /> */}
 
-                {/* <input
+          {/* <input
                 type="button"
                 value="click"
                 onClick={() => this.state.clickRemoveOne}
               /> */}
-                {/* Select to delete{" "}
+          {/* Select to delete{" "}
               </input> */}
-                <Link to="/LinesOfAuthor"> {oneBookTitle}</Link>
-              </div>
-            );
-          })}
-        </form>
-
-        <div>
-          <button onClick={() => this.props.clickToRemoveAll()}>
-            Clear All
+          <Link to="/LinesOfAuthor"> {oneBookTitle}</Link>
+          <button onClick={() => this.props.handleRemover(oneBookTitle)}>
+            Remove
           </button>
         </div>
+      );
+    });
+    return (
+      <div>
+        {favorirestitle}
+        <button onClick={() => this.props.clickToRemoveAll()}>Clear All</button>
       </div>
     );
   }

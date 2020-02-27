@@ -42,20 +42,21 @@ export default class App extends React.Component {
       this.setState({
         faves: [...this.state.faves, title]
       });
-      console.log(`Adding To Favors`);
+      console.log(`Adding To Read it `);
     }
   };
-
-  handlechangeToggle = titles => {
+  handleRemover = t => {
     let faves = this.state.faves.slice();
-    let titleIndex = faves.indexOf(titles);
+    let titlesIndex = faves.indexOf(t);
+    console.log(t, titlesIndex);
 
-    if (titleIndex !== -1) {
+    if (titlesIndex !== -1) {
+      faves.splice(titlesIndex, 1);
       this.setState({
-        faves: [...this.state.faves, titles]
+        faves
       });
-      console.log(`Adding To Remove`);
     }
+    console.log(`Removing From Read it `);
   };
 
   // to add new title and object
@@ -129,16 +130,16 @@ export default class App extends React.Component {
 
               <Link to="/Readit"> Readit</Link>
             </nav>
-            <HashRouter exact path="/Home" component={HomePage} />
+            <Route exact path="/Home" component={HomePage} />
 
-            <HashRouter
+            <Route
               path="/AddNewLiterature"
               component={() => (
                 <AddNewLiterature addNewItem={this.addNewItem} />
               )}
             />
 
-            <HashRouter
+            <Route
               path="/Literature"
               component={() => (
                 <Literature
@@ -147,11 +148,12 @@ export default class App extends React.Component {
                   addToFav={this.addToFav}
                   clickToRemoveAll={this.clickToRemoveAll}
                   toFiltervalue={this.toFiltervalue}
+                  handleRemover={this.handleRemover}
                 />
               )}
             />
 
-            <HashRouter
+            <Route
               path="/LinesOfAuthor"
               component={() => (
                 <LinesOfAuthor literaturelines={this.state.author} />
@@ -170,11 +172,12 @@ export default class App extends React.Component {
                   checkes={this.state.checkes}
                   toRemoveItem={this.toRemoveItem}
                   deletedbook={this.deletedbook}
+                  handleRemover={this.handleRemover}
                 />
               )}
             />
 
-            <HashRouter path="/About" component={About} />
+            <Route path="/About" component={About} />
           </div>
         </Router>
       </div>
