@@ -1,26 +1,26 @@
 {
   "files": {
     "main.css": "/.github.io/Project-2-React-List-App/static/css/main.d91aa8dc.chunk.css",
-    "main.js": "/.github.io/Project-2-React-List-App/static/js/main.f1165e89.chunk.js",
-    "main.js.map": "/.github.io/Project-2-React-List-App/static/js/main.f1165e89.chunk.js.map",
+    "main.js": "/.github.io/Project-2-React-List-App/static/js/main.0c0d9204.chunk.js",
+    "main.js.map": "/.github.io/Project-2-React-List-App/static/js/main.0c0d9204.chunk.js.map",
     "runtime-main.js": "/.github.io/Project-2-React-List-App/static/js/runtime-main.83f26cb4.js",
     "runtime-main.js.map": "/.github.io/Project-2-React-List-App/static/js/runtime-main.83f26cb4.js.map",
     "static/css/2.47e06e2e.chunk.css": "/.github.io/Project-2-React-List-App/static/css/2.47e06e2e.chunk.css",
-    "static/js/2.4a629a14.chunk.js": "/.github.io/Project-2-React-List-App/static/js/2.4a629a14.chunk.js",
-    "static/js/2.4a629a14.chunk.js.map": "/.github.io/Project-2-React-List-App/static/js/2.4a629a14.chunk.js.map",
+    "static/js/2.d671ad23.chunk.js": "/.github.io/Project-2-React-List-App/static/js/2.d671ad23.chunk.js",
+    "static/js/2.d671ad23.chunk.js.map": "/.github.io/Project-2-React-List-App/static/js/2.d671ad23.chunk.js.map",
     "index.html": "/.github.io/Project-2-React-List-App/index.html",
-    "precache-manifest.32f8266776060592a7f233b92fa89065.js": "/.github.io/Project-2-React-List-App/precache-manifest.32f8266776060592a7f233b92fa89065.js",
+    "precache-manifest.73d1df47ca5dbbd31cf5271ba52e22b2.js": "/.github.io/Project-2-React-List-App/precache-manifest.73d1df47ca5dbbd31cf5271ba52e22b2.js",
     "service-worker.js": "/.github.io/Project-2-React-List-App/service-worker.js",
     "static/css/2.47e06e2e.chunk.css.map": "/.github.io/Project-2-React-List-App/static/css/2.47e06e2e.chunk.css.map",
     "static/css/main.d91aa8dc.chunk.css.map": "/.github.io/Project-2-React-List-App/static/css/main.d91aa8dc.chunk.css.map",
-    "static/js/2.4a629a14.chunk.js.LICENSE.txt": "/.github.io/Project-2-React-List-App/static/js/2.4a629a14.chunk.js.LICENSE.txt",
+    "static/js/2.d671ad23.chunk.js.LICENSE.txt": "/.github.io/Project-2-React-List-App/static/js/2.d671ad23.chunk.js.LICENSE.txt",
     "static/media/index.css": "/.github.io/Project-2-React-List-App/static/media/tdih-april23-HD.13d99e70.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.83f26cb4.js",
     "static/css/2.47e06e2e.chunk.css",
-    "static/js/2.4a629a14.chunk.js",
+    "static/js/2.d671ad23.chunk.js",
     "static/css/main.d91aa8dc.chunk.css",
-    "static/js/main.f1165e89.chunk.js"
+    "static/js/main.0c0d9204.chunk.js"
   ]
 }
