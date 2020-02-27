@@ -1,6 +1,11 @@
 import React from "react";
 import "./App.css";
-import { BrowserRouter as Router, Route, HashRouter } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  HashRouter,
+  Link
+} from "react-router-dom";
 import axios from "axios";
 
 import AddNewLiterature from "./Components/AddNewLiteraure";
