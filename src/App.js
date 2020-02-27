@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, HashRouter } from "react-router-dom";
 import axios from "axios";
 
 import AddNewLiterature from "./Components/AddNewLiteraure";
@@ -124,16 +124,16 @@ export default class App extends React.Component {
 
               <Link to="/Readit"> Readit</Link>
             </nav>
-            <Route exact path="/Home" component={HomePage} />
+            <HashRouter exact path="/Home" component={HomePage} />
 
-            <Route
+            <HashRouter
               path="/AddNewLiterature"
               component={() => (
                 <AddNewLiterature addNewItem={this.addNewItem} />
               )}
             />
 
-            <Route
+            <HashRouter
               path="/Literature"
               component={() => (
                 <Literature
@@ -146,7 +146,7 @@ export default class App extends React.Component {
               )}
             />
 
-            <Route
+            <HashRouter
               path="/LinesOfAuthor"
               component={() => (
                 <LinesOfAuthor literaturelines={this.state.author} />
@@ -169,7 +169,7 @@ export default class App extends React.Component {
               )}
             />
 
-            <Route path="/About" component={About} />
+            <HashRouter path="/About" component={About} />
           </div>
         </Router>
       </div>
