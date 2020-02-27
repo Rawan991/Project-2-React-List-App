@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import AddNewLiterature from "./AddNewLiteraure";
 import LinesOfAuthor from "./LinesOfAuthor";
-import Favorites from "./Favorites";
+import Readit from "./Readit";
 
 export default class Literature extends React.Component {
   constructor(props) {
@@ -31,19 +31,19 @@ export default class Literature extends React.Component {
   };
 
   render() {
-    let literatureBooks = this.props.literatureBook.map((titles, key) => {
+    let literatureBooks = this.props.literatureBook.map((titles, i) => {
       return (
         <div>
-          <li>
-            <Link to={`/LinesOfAuthor/${key.title}`}>{titles.title} </Link>
-          </li>
+          <p className="titleofLits">
+            <Link to={`/LinesOfAuthor/${titles.author}`}>{titles.title} </Link>
+          </p>
           <button
             onClick={() => {
               this.props.handleFaveToggle(titles.title);
               //    this.props.addToFav(titles.title);
             }}
           >
-            Fave
+            Read it
           </button>
         </div>
       );
@@ -51,25 +51,30 @@ export default class Literature extends React.Component {
 
     return (
       <div>
-        <p>
+        <p className={"paragraphLi"}>
           {" "}
           There’s no doubt that Shakespeare has influenced English literature
-          enormously, from his impact on other authors, his addition of
-          thousands of words and phrases to the language, and the continued
-          reinterpretation of his plots, again and again. In this section of the
-          site, we go beyond Shakespeare to look at English literature more
-          broadly. We explore how we use the English language, and delve into
-          the very best writers and works in the English language.
+          enormously,
+          <br />
+          from his impact on other authors, his addition of thousands of words
+          and phrases to the language, and the continued reinterpretation of his
+          plots, again and again.
+          <br />
+          In this section of the site, we go beyond Shakespeare to look at
+          English literature more broadly. We explore how we use the English
+          language, and delve into the very best writers and works in the
+          English language.
         </p>
-
+     
         {/* Search title  */}
         <input
-          placeholder={"serch Here of title"}
+        
+          className="titleSeacrh"
+          placeholder={"Search for title"}
           type="text"
           value={this.state.searchOfTitle}
           onChange={e => this.inputSearchChange(e)}
         />
-
         <button onClick={this.handleSearch}> Search </button>
 
         <button className="AddNew">

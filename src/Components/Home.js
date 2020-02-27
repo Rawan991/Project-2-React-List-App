@@ -4,19 +4,8 @@ export default class HomePage extends React.Component {
   render() {
     return (
     <div>
-
-/</div>
+      <h3>Wilcome to Literature of William Shakespeare </h3>
+    </div>
     )
-      // <div id="forStyles">
-      //   <img
-      //     className="forStyle"
-      //     src={process.env.PUBLIC_URL + "/William-Shakespeare.jpg"}
-      //   />
-
-      //   <img className="forStyle" src={process.env.PUBLIC_URL + "/1.jpg"} />
-
-      //   <img className="forStyle" src={process.env.PUBLIC_URL + "/2.jpg"} />
-      // </div>
-    
   }
 }

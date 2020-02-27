@@ -7,8 +7,11 @@ import AddNewLiterature from "./Components/AddNewLiteraure";
 import LinesOfAuthor from "./Components/LinesOfAuthor";
 import Literature from "./Components/Literature";
 import About from "./Components/About";
-import Favorites from "./Components/Favorites";
+import Readit from "./Components/Readit";
 import HomePage from "./Components/Home";
+
+import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
+import Button from "@material-ui/core/Button";
 
 export default class App extends React.Component {
   constructor(props) {
@@ -19,19 +22,6 @@ export default class App extends React.Component {
       checkes: false
     };
   }
-  // toRemoveItem = newItemArra => {
-  //   let temp = this.state.faves.slice();
-  //   const itemID = temp.find(newItemArra);
-  //   //   const titleIndex = faves.indexOf(e)
-  //   console.log(temp);
-  //   console.log(itemID);
-
-  //   temp.splice(itemID, 1);
-
-  //   this.setState({
-  //     faves: temp
-  //   });
-  // };
 
   toFiltervalue = newFilterArra => {
     this.setState({
@@ -50,6 +40,19 @@ export default class App extends React.Component {
       console.log(`Adding To Favors`);
     }
   };
+
+  handlechangeToggle = titles => {
+    let faves = this.state.faves.slice();
+    let titleIndex = faves.indexOf(titles);
+
+    if (titleIndex !== -1) {
+      this.setState({
+        faves: [...this.state.faves, titles]
+      });
+      console.log(`Adding To Remove`);
+    }
+  };
+
   // to add new title and object
   addNewItem = (newTitleTerm, newObjectTerm) => {
     this.setState({
@@ -68,40 +71,18 @@ export default class App extends React.Component {
     });
   };
 
-  //to Remove select item
+  handelCheckbox = title => {
+    console.log("hi");
+    title.checkes = !title.checkes;
+    console.log(title);
+  };
 
-  // to Remove select item
-
-  // clickToRemoveOne = (e, Removeone) => {
-  //   console.log(e.target.checkes);
-  //   //this.state.checkes
-  //   console.log(e);
-  //   const faves = this.state.faves.slice();
-  //   const titleIndex = faves.indexOf(Removeone);
-
-  //   console.log(faves);
-  //   console.log(titleIndex);
-  //   if (titleIndex !== -1) {
-  //     faves.splice(titleIndex, 1);
-
-  //   this.setState({
-  //     faves: this.state.faves.filter(vlau => {
-  //       return vlau !== Removeone;
-  //     })
-  //   });
-  // };}
-
-  deletedbook = book => {
-    const faves = [...this.state.faves];
-    const titleIndex = faves[book];
-    console.log(faves);
-    console.log(titleIndex);
-    if (titleIndex !== -1) {
-      faves.splice(titleIndex, 1);
-    } else {
-      console.log("not work");
-    }
-    this.setState({ faves: faves });
+  deletedbook = () => {
+    console.log(this.state.faves);
+    const favebook = this.state.faves.filter(e => !e.checkes);
+    this.setState({
+      faves: favebook
+    });
   };
 
   // use  axios to get title and liens
@@ -132,7 +113,7 @@ export default class App extends React.Component {
         </div>
 
         <Router>
-          <div>
+          <div className="classes.root">
             <nav className="navbar navbar-dark bg-dark">
               <Link to="/Home">Home</Link>
               <Link to="/Literature">Literature</Link>
@@ -141,7 +122,7 @@ export default class App extends React.Component {
 
               <Link to="/About">About</Link>
 
-              <Link to="/Favorites"> My Favorites</Link>
+              <Link to="/Readit"> Readit</Link>
             </nav>
             <Route exact path="/Home" component={HomePage} />
 
@@ -172,13 +153,15 @@ export default class App extends React.Component {
               )}
             />
             <Route
-              path="/Favorites"
+              path="/Readit"
               component={() => (
-                <Favorites
+                <Readit
                   faves={this.state.faves}
+                  handelCheckbox={this.handelCheckbox}
                   handleFaveToggle={this.handleFaveToggle}
                   clickToRemoveAll={this.clickToRemoveAll}
                   clickToRemoveOne={this.clickToRemoveOne}
+                  handlechangeToggle={this.handlechangeToggle}
                   checkes={this.state.checkes}
                   toRemoveItem={this.toRemoveItem}
                   deletedbook={this.deletedbook}

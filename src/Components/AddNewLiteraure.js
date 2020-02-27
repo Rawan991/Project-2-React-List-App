@@ -1,54 +1,70 @@
-import React from 'react'
+import React from "react";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 export default class AddNewLiterature extends React.Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            term: "",
-            object: ""
-        }
-    }
+  constructor(props) {
+    super(props);
+    this.state = {
+      term: "",
+      object: ""
+    };
+  }
 
+  handleChangeInputText = e => {
+    console.log("On Text Change", e.target.value);
+    this.setState({
+      term: e.target.value
+    });
+  };
+  handleChangeTextarea = e => {
+    console.log("On Text Change", e.target.value);
+    this.setState({
+      object: e.target.value
+    });
+  };
 
-    handleChangeInputText = (e) => {
-        console.log('On Text Change', e.target.value);
-        this.setState({
-            term: e.target.value
-        });
-    }
-    handleChangeTextarea = (e) => {
-        console.log('On Text Change', e.target.value);
-        this.setState({
-            object: e.target.value
-        });
-    }
+  render() {
+    return (
+      <div>
+        <div class="form-group">
+          <label className="TitleOfInput" for="formGroupExampleInput">
+            {" "}
+            Add New Title{" "}
+          </label>
 
+          <input
+            className="form-control"
+            id="addtitle"
+            type="text"
+            placeholder="Literature Title"
+            value={this.state.term}
+            onChange={this.handleChangeInputText}
+          />
 
-
-    render() {
-
-        return (
-            <div>
-
-                <input type="text" placeholder="Literature Title" value={this.state.term}
-                    onChange={this.handleChangeInputText} />
-
-                <br></br>
-                <br></br>
-                <textarea name="Literature" rows='10' cols='30' value={this.state.object}
-                    onChange={this.handleChangeTextarea} />
-                <br></br>
-                <br></br>
-
-                <input type="button" value="Post" onClick={() =>
-                    this.props.addNewItem(this.state.term, this.state.object)}
-                >
-                </input>
-
-            </div >
-        )
-
-    }
+          <label className="TitleOfInput" for="comment">
+            {" "}
+            Write Literature :
+          </label>
+          <textarea
+            type="text"
+            className="form-control"
+            id="comment"
+            name="Literature"
+            value={this.state.object}
+            onChange={this.handleChangeTextarea}
+          />
+          <Link to="/Literature">
+            <input
+              className="submit"
+              type="submit"
+              value="Post"
+              onClick={() =>
+                this.props.addNewItem(this.state.term, this.state.object)
+              }
+            />
+          </Link>
+        </div>
+      </div>
+    );
+  }
 }
-
-
