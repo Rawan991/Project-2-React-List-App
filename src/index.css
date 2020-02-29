@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  font-family: "Lobster Two";
+  font-family: "Simonetta";
 }
 
 header {
@@ -20,24 +20,25 @@ ul {
 nav {
   text-align: center;
   font-size: 20px;
+  color: hsl(hue, saturation, lightness);
+  font-family: "Simonetta";
 }
 
 h1 {
   text-align: center;
-  font-family: "Courgette";
+  font-family: "Simonetta";
   margin: 20px;
 }
 h3 {
   text-align: center;
   margin: 30px;
-  font-family: "Courgette";
-  
+  font-family: "Simonetta";
 }
 .AddNew {
   text-align: center;
 }
 button {
-  font-family: "Courgette";
+  font-family: "Simonetta";
   margin: 2px 1px 6px 6px;
   border-radius: 5px;
 }
@@ -46,15 +47,15 @@ button {
   margin: auto 20px;
   border-radius: 5px;
   font-size: 25px;
-  font-family: "Courgette";
+  font-family: "Simonetta";
 }
 .titleofLits {
   font-family: "Lobster Two";
 }
 .titleofLit {
-  font-family: "Courgette";
+  font-family: "Simonetta";
   margin: 15px;
-  font-size: 25px;
+  font-size: 20px;
 }
 .Aboutit {
   font-size: 17px;

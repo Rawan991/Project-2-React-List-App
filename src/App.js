@@ -119,16 +119,25 @@ export default class App extends React.Component {
         </div>
 
         <Router>
-          <div className="classes.root">
+          <div>
             <nav className="navbar navbar-dark bg-dark">
-              <Link to="/Home">Home</Link>
-              <Link to="/Literature">Literature</Link>
+              <Link className="nav-link" to="/Home">
+                Home
+              </Link>
+              <Link className="nav-link" to="/Literature">
+                Literature
+              </Link>
 
               {/* <Link to='/LinesOfAuthor'>LinesOfAuthor</Link> */}
 
-              <Link to="/About">About</Link>
+              <Link className="nav-link" to="/About">
+                About
+              </Link>
 
-              <Link to="/Readit"> Readit</Link>
+              <Link className="nav-link" to="/Readit">
+                {" "}
+                Readit
+              </Link>
             </nav>
             <Route exact path="/Home" component={HomePage} />
 

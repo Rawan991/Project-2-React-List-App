@@ -1,8 +1,5 @@
 import React from "react";
 
-import IconButton from "@material-ui/core/IconButton";
-import DeleteIcon from "@material-ui/core/icon";
-
 import LinesOfAuthor from "./LinesOfAuthor";
 import Literature from "./Literature";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
@@ -39,7 +36,10 @@ export default class Readit extends React.Component {
           {/* Select to delete{" "}
               </input> */}
           <Link to="/LinesOfAuthor"> {oneBookTitle}</Link>
-          <button onClick={() => this.props.handleRemover(oneBookTitle)}>
+          <button
+            className="btn btn-dark"
+            onClick={() => this.props.handleRemover(oneBookTitle)}
+          >
             Remove
           </button>
         </div>
@@ -48,7 +48,12 @@ export default class Readit extends React.Component {
     return (
       <div>
         {favorirestitle}
-        <button onClick={() => this.props.clickToRemoveAll()}>Clear All</button>
+        <button
+          className="btn btn-dark"
+          onClick={() => this.props.clickToRemoveAll()}
+        >
+          Clear All
+        </button>
       </div>
     );
   }
