@@ -1,26 +1,26 @@
 {
   "files": {
-    "main.css": "/.github.io/Project-2-React-List-App/static/css/main.4af47937.chunk.css",
-    "main.js": "/.github.io/Project-2-React-List-App/static/js/main.bc0840a6.chunk.js",
-    "main.js.map": "/.github.io/Project-2-React-List-App/static/js/main.bc0840a6.chunk.js.map",
-    "runtime-main.js": "/.github.io/Project-2-React-List-App/static/js/runtime-main.83f26cb4.js",
-    "runtime-main.js.map": "/.github.io/Project-2-React-List-App/static/js/runtime-main.83f26cb4.js.map",
-    "static/css/2.47e06e2e.chunk.css": "/.github.io/Project-2-React-List-App/static/css/2.47e06e2e.chunk.css",
-    "static/js/2.d671ad23.chunk.js": "/.github.io/Project-2-React-List-App/static/js/2.d671ad23.chunk.js",
-    "static/js/2.d671ad23.chunk.js.map": "/.github.io/Project-2-React-List-App/static/js/2.d671ad23.chunk.js.map",
-    "index.html": "/.github.io/Project-2-React-List-App/index.html",
-    "precache-manifest.c0a87dc22e97b035ae7eb927c4a1e149.js": "/.github.io/Project-2-React-List-App/precache-manifest.c0a87dc22e97b035ae7eb927c4a1e149.js",
-    "service-worker.js": "/.github.io/Project-2-React-List-App/service-worker.js",
-    "static/css/2.47e06e2e.chunk.css.map": "/.github.io/Project-2-React-List-App/static/css/2.47e06e2e.chunk.css.map",
-    "static/css/main.4af47937.chunk.css.map": "/.github.io/Project-2-React-List-App/static/css/main.4af47937.chunk.css.map",
-    "static/js/2.d671ad23.chunk.js.LICENSE.txt": "/.github.io/Project-2-React-List-App/static/js/2.d671ad23.chunk.js.LICENSE.txt",
-    "static/media/index.css": "/.github.io/Project-2-React-List-App/static/media/tdih-april23-HD.13d99e70.jpg"
+    "main.css": "/William-Shakespeare/static/css/main.5be7d54f.chunk.css",
+    "main.js": "/William-Shakespeare/static/js/main.a9874aad.chunk.js",
+    "main.js.map": "/William-Shakespeare/static/js/main.a9874aad.chunk.js.map",
+    "runtime-main.js": "/William-Shakespeare/static/js/runtime-main.75d15128.js",
+    "runtime-main.js.map": "/William-Shakespeare/static/js/runtime-main.75d15128.js.map",
+    "static/css/2.47e06e2e.chunk.css": "/William-Shakespeare/static/css/2.47e06e2e.chunk.css",
+    "static/js/2.d671ad23.chunk.js": "/William-Shakespeare/static/js/2.d671ad23.chunk.js",
+    "static/js/2.d671ad23.chunk.js.map": "/William-Shakespeare/static/js/2.d671ad23.chunk.js.map",
+    "index.html": "/William-Shakespeare/index.html",
+    "precache-manifest.1db1f05214e76aadb96eb78519a920a3.js": "/William-Shakespeare/precache-manifest.1db1f05214e76aadb96eb78519a920a3.js",
+    "service-worker.js": "/William-Shakespeare/service-worker.js",
+    "static/css/2.47e06e2e.chunk.css.map": "/William-Shakespeare/static/css/2.47e06e2e.chunk.css.map",
+    "static/css/main.5be7d54f.chunk.css.map": "/William-Shakespeare/static/css/main.5be7d54f.chunk.css.map",
+    "static/js/2.d671ad23.chunk.js.LICENSE.txt": "/William-Shakespeare/static/js/2.d671ad23.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/William-Shakespeare/static/media/tdih-april23-HD.13d99e70.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.83f26cb4.js",
+    "static/js/runtime-main.75d15128.js",
     "static/css/2.47e06e2e.chunk.css",
     "static/js/2.d671ad23.chunk.js",
-    "static/css/main.4af47937.chunk.css",
-    "static/js/main.bc0840a6.chunk.js"
+    "static/css/main.5be7d54f.chunk.css",
+    "static/js/main.a9874aad.chunk.js"
   ]
 }
